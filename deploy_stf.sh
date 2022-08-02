@@ -22,8 +22,8 @@ echo "DNS Address: ${DNS_ADDRESS}"
 # Get exported IP Adreess 
 [ ! -z "$(echo ${NETWORK_INTERFACES} | grep "wlo1")" ]&&NETNAME="wlo1"
 [ ! -z "$(echo ${NETWORK_INTERFACES} | grep "eno1")" ]&&NETNAME="eno1"
-IP_ADDRESS=$(ifconfig ${NETNAME}|grep "inet "|awk -F: '{print $2}'|awk '{print $1}')
-[ $# -gt 0 ]&&IP_ADDRESS=$1
+IP_ADDRESS=192.168.0.111
+[ $# -gt 0 ]&&IP_ADDRESS=192.168.0.111
 echo "IP ADDRESS: ${IP_ADDRESS}"
 
 check_return_code() {
